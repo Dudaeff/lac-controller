@@ -1,16 +1,14 @@
+import incomingData from 'Data/incomingData';
+
+import { Layout } from './Layout/Layout';
+import { MainController } from './MainController/MainController';
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <main>
+      <Layout>
+        <MainController data={incomingData}></MainController>
+      </Layout>
+    </main>
   );
 };
