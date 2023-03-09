@@ -1,7 +1,7 @@
-import { InfoList, Title, InfoListItem } from './MainController.styled';
+import { InfoList, Title, InfoListItem } from './Controller.styled';
 
-const MainController = ({
-  data: { boardName, chipName, chipID, MAC, firmvare, location },
+const Controller = ({
+  source: { boardName, chipName, chipID, MAC, firmvare, location },
   children,
 }) => {
   return (
@@ -29,4 +29,4 @@ const MainController = ({
   );
 };
 
-export { MainController };
+export { Controller };

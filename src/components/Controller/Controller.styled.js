@@ -8,6 +8,7 @@ const Title = styled.h1`
 const InfoList = styled.ul`
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 15px;
 `;
 
 const InfoListItem = styled.li`
