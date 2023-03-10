@@ -28,7 +28,6 @@ const SensorsList = ({ sensors }) => {
                     );
                   })}
                 </ComponentsList>
-                {/* there will be graph */}
               </ComponentsCard>
             </SensorsListItem>
           );

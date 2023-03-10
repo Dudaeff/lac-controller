@@ -1,33 +1,34 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
+import { getData } from './services/API';
 import { Layout } from './Layout/Layout';
 import { Controller } from './Controller/Controller';
 import { SensorsList } from './SensorsList/SensorsList';
 
-async function getData() {
-  try {
-    const response = await fetch('http://emet-dev.core.lac/emet.json');
-    return response.json();
-  } catch (error) {
-    console.error(error);
-  }
-}
-
 const App = () => {
-  const [newData, setNewData] = useState([]);
+  const [source, setSource] = useState([]);
+  const timeoutID = useRef(null);
 
   useEffect(() => {
-    if (newData) {
-      getData().then(setNewData);
+    if (source) {
+      getData().then(data => {
+        timeoutID.current = setTimeout(() => setSource(data), 1000);
+      });
     }
-  }, [newData]);
+
+    return () => {
+      clearTimeout(timeoutID.current);
+    };
+  }, [source]);
 
   return (
     <main>
       <Layout>
-        <Controller source={newData}>
-          <SensorsList sensors={newData.Sensors} />
-        </Controller>
+        {source && (
+          <Controller source={source}>
+            <SensorsList sensors={source.Sensors} />
+          </Controller>
+        )}
       </Layout>
     </main>
   );

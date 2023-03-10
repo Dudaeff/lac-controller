@@ -14,7 +14,6 @@ const ComponentsTitle = styled.h2`
 const ComponentsList = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  /* flex-direction: column; */
   justify-content: space-between;
   row-gap: 5px;
 `;
