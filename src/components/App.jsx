@@ -1,19 +1,36 @@
-import incomingData from 'Data/incomingData';
+import { useEffect, useState } from 'react';
 
 import { Layout } from './Layout/Layout';
 import { Controller } from './Controller/Controller';
 import { SensorsList } from './SensorsList/SensorsList';
 
-const SENSORS = incomingData.Sensors;
+async function getData() {
+  try {
+    const response = await fetch('http://emet-dev.core.lac/emet.json');
+    return response.json();
+  } catch (error) {
+    console.error(error);
+  }
+}
 
-export const App = () => {
+const App = () => {
+  const [newData, setNewData] = useState([]);
+
+  useEffect(() => {
+    if (newData) {
+      getData().then(setNewData);
+    }
+  }, [newData]);
+
   return (
     <main>
       <Layout>
-        <Controller source={incomingData}>
-          <SensorsList sensors={SENSORS} />
+        <Controller source={newData}>
+          <SensorsList sensors={newData.Sensors} />
         </Controller>
       </Layout>
     </main>
   );
 };
+
+export { App };

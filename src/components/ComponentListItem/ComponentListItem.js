@@ -1,14 +1,14 @@
-import { Component,Componentinfo } from "./ComponentsListItem.styled";
+import { Component, ComponentLabel } from './ComponentsListItem.styled';
 
-const ComponentsListItem = ({component:{name, type, unit, value}}) => {
-    return (
-        <Component>
-            <Componentinfo>Name: { name }</Componentinfo>
-            <Componentinfo>Type: { type }</Componentinfo>
-            <Componentinfo>Value: {value}</Componentinfo>
-            <Componentinfo>Unit: { unit }</Componentinfo>
-        </Component>
-)    
-}
+const ComponentsListItem = ({ component: { name, type, unit, value } }) => {
+  return (
+    <Component>
+      <ComponentLabel>Name: {name}</ComponentLabel>
+      <ComponentLabel>Type: {type}</ComponentLabel>
+      <ComponentLabel>Value: {value}</ComponentLabel>
+      <ComponentLabel>Unit: {unit}</ComponentLabel>
+    </Component>
+  );
+};
 
 export { ComponentsListItem };

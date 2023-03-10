@@ -1,4 +1,10 @@
-import { InfoList, Title, InfoListItem } from './Controller.styled';
+import {
+  InfoList,
+  Title,
+  InfoListItem,
+  InfoCard,
+  InfoLabel,
+} from './Controller.styled';
 
 const Controller = ({
   source: { boardName, chipName, chipID, MAC, firmvare, location },
@@ -6,24 +12,26 @@ const Controller = ({
 }) => {
   return (
     <section>
-      <Title>Board Name: {boardName}</Title>
-      <InfoList>
-        <InfoListItem>
-          <p>Chip Name: {chipName}</p>
-        </InfoListItem>
-        <InfoListItem>
-          <p>Chip ID: {chipID}</p>
-        </InfoListItem>
-        <InfoListItem>
-          <p>MAC: {MAC}</p>
-        </InfoListItem>
-        <InfoListItem>
-          <p>Firmvare: {firmvare}</p>
-        </InfoListItem>
-        <InfoListItem>
-          <p>Location: {location}</p>
-        </InfoListItem>
-      </InfoList>
+      <InfoCard>
+        <Title>Board Name: {boardName}</Title>
+        <InfoList>
+          <InfoListItem>
+            <InfoLabel>Chip Name: {chipName}</InfoLabel>
+          </InfoListItem>
+          <InfoListItem>
+            <InfoLabel>Chip ID: {chipID}</InfoLabel>
+          </InfoListItem>
+          <InfoListItem>
+            <InfoLabel>MAC: {MAC}</InfoLabel>
+          </InfoListItem>
+          <InfoListItem>
+            <InfoLabel>Firmvare: {firmvare}</InfoLabel>
+          </InfoListItem>
+          <InfoListItem>
+            <InfoLabel>Location: {location}</InfoLabel>
+          </InfoListItem>
+        </InfoList>
+      </InfoCard>
       {children}
     </section>
   );
