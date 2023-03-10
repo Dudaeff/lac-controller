@@ -13,22 +13,22 @@ const Controller = ({
   return (
     <section>
       <InfoCard>
-        <Title>Board Name: {boardName}</Title>
+        <Title>Board Name: {boardName && boardName}</Title>
         <InfoList>
           <InfoListItem>
-            <InfoLabel>Chip Name: {chipName}</InfoLabel>
+            <InfoLabel>Chip Name: {chipName && chipName}</InfoLabel>
           </InfoListItem>
           <InfoListItem>
-            <InfoLabel>Chip ID: {chipID}</InfoLabel>
+            <InfoLabel>Chip ID: {chipID && chipID}</InfoLabel>
           </InfoListItem>
           <InfoListItem>
-            <InfoLabel>MAC: {MAC}</InfoLabel>
+            <InfoLabel>MAC: {MAC && MAC}</InfoLabel>
           </InfoListItem>
           <InfoListItem>
-            <InfoLabel>Firmvare: {firmvare}</InfoLabel>
+            <InfoLabel>Firmvare: {firmvare && firmvare}</InfoLabel>
           </InfoListItem>
           <InfoListItem>
-            <InfoLabel>Location: {location}</InfoLabel>
+            <InfoLabel>Location: {location && location}</InfoLabel>
           </InfoListItem>
         </InfoList>
       </InfoCard>

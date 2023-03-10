@@ -6,14 +6,14 @@ import { Controller } from './Controller/Controller';
 import { SensorsList } from './SensorsList/SensorsList';
 
 const App = () => {
-  const [source, setSource] = useState([]);
+  const [source, setSource] = useState({});
   const timeoutID = useRef(null);
 
   useEffect(() => {
     if (source) {
-      getData().then(data => {
-        timeoutID.current = setTimeout(() => setSource(data), 1000);
-      });
+      getData().then(
+        data => (timeoutID.current = setTimeout(() => setSource(data), 1000))
+      );
     }
 
     return () => {
@@ -24,6 +24,7 @@ const App = () => {
   return (
     <main>
       <Layout>
+        {!source && <h1>'Whoops... Something wetn wrong.'</h1>}
         {source && (
           <Controller source={source}>
             <SensorsList sensors={source.Sensors} />
