@@ -1,9 +1,10 @@
+const SOURCE_URL = 'http://emet-dev.core.lac/emet.json';
+
 async function getData() {
   try {
-    const response = await fetch('http://emet-dev.core.lac/emet.json');
-    return response.json();
+    return await fetch(SOURCE_URL);
   } catch (error) {
-    console.error(error);
+    console.error(error.message);
   }
 }
 

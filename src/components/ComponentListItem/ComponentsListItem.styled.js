@@ -1,17 +1,5 @@
 import styled from 'styled-components';
 
-const ComponentsCard = styled.div`
-  @media screen and (max-width: 480px) {
-    width: 250px;
-    /* padding: 5px 5px; */
-  }
-
-  width: 900px;
-  padding: 5px 10px;
-  border: 2px solid black;
-  border-radius: 5px;
-`;
-
 const ComponentsTitle = styled.h2`
   margin-bottom: 15px;
 `;
@@ -43,10 +31,4 @@ const ComponentLabel = styled.p`
   border-radius: 5px;
 `;
 
-export {
-  Component,
-  ComponentLabel,
-  ComponentsCard,
-  ComponentsTitle,
-  ComponentsList,
-};
+export { Component, ComponentLabel, ComponentsTitle, ComponentsList };

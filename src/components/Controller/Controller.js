@@ -1,3 +1,7 @@
+import { useEffect, useState } from 'react';
+import { useThrottle } from 'use-throttle';
+import { getData } from 'components/services/API';
+
 import {
   InfoList,
   Title,
@@ -5,11 +9,26 @@ import {
   InfoCard,
   InfoLabel,
 } from './Controller.styled';
+import { SensorsList } from 'components/SensorsList/SensorsList';
 
-const Controller = ({
-  source: { boardName, chipName, chipID, MAC, firmvare, location },
-  children,
-}) => {
+const Controller = () => {
+  const [source, setSource] = useState([]);
+  const throttledSource = useThrottle(source, 1000);
+
+  useEffect(() => {
+    getData()
+      .then(response => {
+        if (!response.ok) {
+          return Promise.reject(response.statusText);
+        }
+        return response.json();
+      })
+      .then(data => setSource(data));
+  }, [throttledSource]);
+
+  const { boardName, chipName, chipID, MAC, firmvare, location, Sensors } =
+    source;
+
   return (
     <section>
       <InfoCard>
@@ -32,7 +51,7 @@ const Controller = ({
           </InfoListItem>
         </InfoList>
       </InfoCard>
-      {children}
+      <SensorsList sensors={Sensors} />
     </section>
   );
 };
