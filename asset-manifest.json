@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/lac-controller/static/css/main.e41bcd07.css",
-    "main.js": "/lac-controller/static/js/main.563c64ca.js",
+    "main.js": "/lac-controller/static/js/main.6be9c54a.js",
     "index.html": "/lac-controller/index.html",
     "main.e41bcd07.css.map": "/lac-controller/static/css/main.e41bcd07.css.map",
-    "main.563c64ca.js.map": "/lac-controller/static/js/main.563c64ca.js.map"
+    "main.6be9c54a.js.map": "/lac-controller/static/js/main.6be9c54a.js.map"
   },
   "entrypoints": [
     "static/css/main.e41bcd07.css",
-    "static/js/main.563c64ca.js"
+    "static/js/main.6be9c54a.js"
   ]
 }
