@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
 const ComponentsCard = styled.div`
+  @media screen and (max-width: 480px) {
+    width: 250px;
+    /* padding: 5px 5px; */
+  }
+
   width: 900px;
   padding: 5px 10px;
   border: 2px solid black;
@@ -12,6 +17,10 @@ const ComponentsTitle = styled.h2`
 `;
 
 const ComponentsList = styled.ul`
+  @media screen and (max-width: 480px) {
+    display: flex;
+    flex-direction: column;
+  }
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -19,6 +28,9 @@ const ComponentsList = styled.ul`
 `;
 
 const Component = styled.li`
+  @media screen and (max-width: 480px) {
+    padding: 5px 5px;
+  }
   width: 190px;
   padding: 5px 10px;
   border: 1px solid black;

@@ -12,6 +12,7 @@ const InfoCard = styled.div`
 
 const InfoList = styled.ul`
   display: flex;
+  flex-wrap: wrap;
 `;
 
 const InfoListItem = styled.li`

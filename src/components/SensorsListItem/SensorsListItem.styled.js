@@ -1,11 +1,17 @@
 import styled from 'styled-components';
 
 const SensorItem = styled.li`
-  display: flex;
+  @media screen and (max-width: 480px) {
+    display: flex;
+    flex-direction: column;
+  }
   column-gap: 5px;
 `;
 
 const SensorCard = styled.div`
+  @media screen and (max-width: 480px) {
+    padding: 5px 5px;
+  }
   width: 250px;
   padding: 5px 15px;
   border: 2px solid black;
